@@ -9,7 +9,7 @@ def prediction(urls):
     'api_secret': 'dgDy9CifFDfgufJWhT8h'
   }
   r = requests.get('https://api.sightengine.com/1.0/check.json', params=params)
-
+  print(r.text)
   output = dict(json.loads(r.text))['nudity']['erotica']
   outputs = f"Obscenity Confidence: {output}"
   return outputs
