@@ -10,8 +10,6 @@ CORS(app, origins='*')
 
 @app.route('/urls', methods=['POST'])
 def urls():
-    print("Hello")
-    print(request)
     urls = request.json['urls']
     score = predict.prediction(urls)
     if(score == -1):
