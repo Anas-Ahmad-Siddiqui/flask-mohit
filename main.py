@@ -14,12 +14,14 @@ def urls():
     print(request)
     urls = request.json['urls']
     score = predict.prediction(urls)
-    print(score)
-    data = {'Obscenity Confidence': score}
-    response = jsonify(data)
-    response.status_code = 200
-    return response
-
+    if(score == -1):
+        return jsonify({'error': 'Invalid URL'})
+    else:
+        print(score)
+        data = {'Obscenity Confidence': score}
+        response = jsonify(data)
+        response.status_code = 200
+        return response
 
 @app.route('/mailer', methods=['POST'])
 def mailer():
