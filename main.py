@@ -13,7 +13,13 @@ def urls():
     print("Hello")
     print(request)
     urls = request.json['urls']
-    return predict.prediction(urls)
+    score = predict.prediction(urls)
+    print(score)
+    data = {'Obscenity Confidence': score}
+    response = jsonify(data)
+    response.status_code = 200
+    return response
+
 
 @app.route('/mailer', methods=['POST'])
 def mailer():
