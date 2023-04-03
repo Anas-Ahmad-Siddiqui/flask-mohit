@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/urls', methods=['POST'])
 def urls():
     print("Hello")
-    print(request.json)
+    print(request)
     urls = request.json['urls']
     return predict.prediction(urls)
 
