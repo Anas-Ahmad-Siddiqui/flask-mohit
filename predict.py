@@ -5,8 +5,8 @@ def prediction(urls):
   params = {
     'url': f'{urls}',
     'models': 'nudity-2.0',
-    'api_user': '433509463',
-    'api_secret': 'KTyVa9kMbBSYuLvGPNoD'
+    'api_user': '143155185',
+    'api_secret': 'SkDJSs9nGheJefzhHdHU'
   }
   try:
     r = requests.get('https://api.sightengine.com/1.0/check.json', params=params)
